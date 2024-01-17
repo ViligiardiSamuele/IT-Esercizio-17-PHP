@@ -1,9 +1,11 @@
 <?php
 session_start();
 $_SESSION["id_lista"] = -1;
+
 $mysqli = new mysqli("localhost", "root", null, "es17php", 3306)
 or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
 $query = "SELECT * FROM liste";
+
 $response = mysqli_query($mysqli, $query)
 or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
 $mysqli->close() or die ("Chiusura connessione fallita" . $mysqli->error . " " . $mysqli->errno);

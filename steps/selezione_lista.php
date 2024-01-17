@@ -1,11 +1,10 @@
 <?php
 session_start();
-$_SESSION["id_lista"] = -1;
 
 $mysqli = new mysqli("localhost", "root", null, "es17php", 3306)
 or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
-$query = "SELECT * FROM liste";
 
+$query = "SELECT * FROM liste";
 $response = mysqli_query($mysqli, $query)
 or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
 $mysqli->close() or die ("Chiusura connessione fallita" . $mysqli->error . " " . $mysqli->errno);
@@ -29,7 +28,7 @@ echo '
         </h3>
         <p>appena selezionata la lista, le verrà proposto l\'elenco dei candidati per quella lista</p>
 
-        <form action="../two/selezione_candidato.php" method="post">
+        <form action="selezione_candidato.php" method="post">
             <select class="form-select" name="id_lista">
                 <option selected>Selezionare la lista</option>';
 

@@ -25,7 +25,7 @@ echo '
             <li>selezione del candidato appartenente alal suddetta lista</li>
             <li>conferma del voto o ritorno alla prima fase</li>
         </ul>
-        <a class="btn btn-primary" role="button" aria-disabled="true" href="steps/one/selezione_lista.php">Seleziona lista</a>
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="steps/selezione_lista.php">Seleziona lista</a>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

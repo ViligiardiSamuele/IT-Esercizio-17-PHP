@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['id_candidato'] = $_POST['id_candidato'];
 $mysqli = new mysqli("localhost", "root", null, "es17php", 3306)
 or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
 
@@ -8,7 +9,7 @@ $candidato = mysqli_query($mysqli, $query)
 or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
 $candidato = mysqli_fetch_array($candidato, MYSQLI_ASSOC);
 
-$query = "SELECT l.nome_lista FROM liste l WHERE l.id_lista = " . $candidato["id_lista"] . "";
+$query = "SELECT l.nome_lista FROM liste l WHERE l.id_lista = " . $_SESSION['id_lista'] . "";
 $lista = mysqli_query($mysqli, $query)
 or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
 $lista = mysqli_fetch_array($lista, MYSQLI_ASSOC);
@@ -37,8 +38,8 @@ echo '
         <h3>Lista: ' . $lista['nome_lista'] . '</h3>
         <h3>Candidato: ' . $candidato['cognome'] . ' ' . $candidato['nome'] . '</h3>
         
-        <a class="btn btn-primary" role="button" aria-disabled="true" href="steps/one/selezione_lista.php">Cambia Scelta</a>
-        <a class="btn btn-primary" role="button" aria-disabled="true" href="steps/four/voto_confermato.php">Vota</a>
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="voto_confermato.php">Conferma</a>
+        <a class="btn btn-primary" role="button" aria-disabled="true" href="selezione_lista.php">Annulla</a>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

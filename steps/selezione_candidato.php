@@ -2,11 +2,11 @@
 session_start();
 $_SESSION['id_lista'] = $_POST['id_lista'];
 $mysqli = new mysqli("localhost", "root", null, "es17php", 3306)
-or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
+    or die("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
 $query = "SELECT c.id_candidato, c.cognome, c.nome FROM candidati c WHERE c.id_lista = " . $_POST['id_lista'] . "";
 $response = mysqli_query($mysqli, $query)
-or die ("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
-$mysqli->close() or die ("Chiusura connessione fallita" . $mysqli->error . " " . $mysqli->errno);
+    or die("Connessione non riuscita" . $mysqli->connect_error . " " . $mysqli->connect_errno);
+$mysqli->close() or die("Chiusura connessione fallita" . $mysqli->error . " " . $mysqli->errno);
 
 echo '
     <!doctype html>
@@ -42,11 +42,11 @@ echo '
                 <select class="form-select mb-2" name="id_candidato">
                     <option selected>Selezionare il candidato</option>';
 
-                    while ($row = mysqli_fetch_array($response, MYSQLI_ASSOC)){
-                        echo '<option value="' . $row['id_candidato'] . '">' . $row['cognome'] . ' ' . $row['nome'] . '</option>';
-                    }
-                    
-                echo '</select>
+while ($row = mysqli_fetch_array($response, MYSQLI_ASSOC)) {
+    echo '<option value="' . $row['id_candidato'] . '">' . $row['cognome'] . ' ' . $row['nome'] . '</option>';
+}
+
+echo '</select>
                 <button type="submit" class="btn btn-primary">Continua</button>
                 </form>
             </div>

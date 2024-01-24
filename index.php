@@ -36,7 +36,7 @@ echo '
                     <li>conferma del voto o ritorno alla prima fase</li>
                 </ul>
                 <a class="btn btn-primary" role="button" aria-disabled="true" href="steps/selezione_lista.php">Seleziona lista</a>
-                <a class="btn btn-primary text-end" role="button" aria-disabled="true" href="steps/selezione_lista.php">Statistiche</a>
+                <a class="btn btn-primary text-end" role="button" aria-disabled="true" href="stats/login.php">Amministratore</a>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
